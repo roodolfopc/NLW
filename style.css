@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  text-decoration: none;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root{
+  --bg-page: #121214;
+  --bg-card: #2A2634;
+  --primary: #FFFFFF;
+  --secondary: #A1A1AA;
+  --border-card: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+}
+
+body *{
+  font-family: 'inter', sans-serif;
+  line-height: 160%;
+}
+
+body{
+  background: url(./assets/bg.png);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: var(--bg-page)
+}
+
+header{
+  margin: 32px 0 0 0 ;
+  height: 152px;
+  text-align: center;
+}
+
+header div img{
+  width: 120px;
+  border-radius: 50%;
+  background-image: var(--border-card);
+  padding: 4px;
+
+  transition: transform 0.3s;
+  animation: fromTop .7s .4s backwards;
+}
+
+header div img background-image:hover{
+  transition: transform 0.2s;
+  transform: rotate(360deg);
+}
+
+main{
+  max-width: 580px;
+  width: 90%;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+main section{
+  background-image: var(--border-card);
+  padding-top: 4px;
+  border-radius: 10px;
+
+  animation:  fromBottom .7s backwards;
+}
+
+main section:nth-child(1){
+  animation-delay: 0;
+}
+
+main section:nth-child(2){
+  animation-delay: .2s;
+}
+
+main section:nth-child(3){
+  animation-delay: .6s;
+}
+
+main section div{
+  background-color: var(--bg-card);
+  padding: 32px;
+  padding-top: 24px;
+  border-radius: 8px;
+}
+
+main section h2{
+  color: var(--primary);
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -0.47px;
+}
+
+main section p{
+  color: var(--secondary);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.18px;
+}
+
+main section ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+main section ul li{
+  transition: transform .3s;
+}
+
+section ul li:hover{
+  transform: translate(5%, -5%);
+  transition: 0.5 ease;
+}
+
+.game-list img{
+  width: 90px;
+  border-radius: 8px;
+
+}
+
+.channel-list img{
+  width: 70px;
+  border-radius: 50%;
+}
+
+
+
+@keyframes fromTop{
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  } to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fromBottom{
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  } to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
